@@ -136,6 +136,12 @@ npm run dev
 ```
 Frontend Studio will be running at `http://localhost:5173`
 
+### Netlify deployment
+
+The root `netlify.toml` sets `frontend` as the build base, runs `npm run build`, and publishes `frontend/dist` (the publish path is relative to the base). Netlify installs dependencies using `frontend/package.json` and its committed lockfile.
+
+This deploy publishes the frontend only. The Python FastAPI server and FFmpeg rendering pipeline require a separate running backend; Vite's local `/api` proxy applies only during development.
+
 ---
 
 ## 7. How to Test the Complete End-to-End Workflow
